@@ -1,0 +1,136 @@
+.resumes-page h1 {
+  margin-bottom: 20px;
+}
+
+.resumes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.generate-form {
+  margin-bottom: 20px;
+}
+
+.generate-form h3 {
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-grid .full-width {
+  grid-column: span 2;
+}
+
+.resumes-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.resumes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.resume-card {
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+}
+
+.resume-card:hover {
+  transform: translateY(-2px);
+}
+
+.resume-card.selected {
+  border-color: #646cff;
+}
+
+.resume-card h3 {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.resume-card .target {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.resume-card .date {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.resume-detail {
+  position: sticky;
+  top: 20px;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.detail-header h2 {
+  margin: 0;
+}
+
+.resume-detail .meta {
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.resume-content {
+  background: #242424;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.resume-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.no-resumes {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
+
+@media (max-width: 1024px) {
+  .resumes-container {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-detail {
+    position: static;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .full-width {
+    grid-column: span 1;
+  }
+}

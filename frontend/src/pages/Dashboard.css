@@ -1,0 +1,65 @@
+.dashboard h1 {
+  margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stat-icon {
+  font-size: 2em;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #646cff;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.profile-section h2 {
+  margin: 0;
+}
+
+.profile-info p {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.profile-info p strong {
+  color: #fff;
+  margin-right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
