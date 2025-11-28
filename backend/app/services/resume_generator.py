@@ -3,6 +3,13 @@ from typing import Optional
 
 from app.core.config import settings
 
+# Try to import OpenAI at module level
+try:
+    from openai import AsyncOpenAI
+    OPENAI_AVAILABLE = True
+except ImportError:
+    OPENAI_AVAILABLE = False
+
 
 class ResumeGeneratorService:
     """Service for generating tailored resumes using AI."""
@@ -60,9 +67,17 @@ class ResumeGeneratorService:
         user_education: Optional[str] = None,
     ) -> str:
         """Generate resume using OpenAI API."""
+        if not OPENAI_AVAILABLE:
+            return self._generate_template_resume(
+                target_role,
+                user_experience,
+                user_skills,
+                target_company,
+                job_description,
+                user_education,
+            )
+        
         try:
-            from openai import AsyncOpenAI
-
             client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
             prompt = f"""Create a professional resume for a {target_role} position.

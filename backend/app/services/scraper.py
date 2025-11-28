@@ -1,9 +1,5 @@
 """Job scraping service."""
-import asyncio
-import re
 from typing import List, Optional
-from bs4 import BeautifulSoup
-import httpx
 
 from app.schemas.job import JobCreate
 

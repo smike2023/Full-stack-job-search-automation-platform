@@ -1,9 +1,8 @@
 """Scheduling service for automated job searches."""
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Dict, Optional
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.schedule import SearchSchedule
 
